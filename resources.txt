@@ -1,0 +1,2 @@
+https://www.pygame.org/docs/
+https://all3dp.com/1/obj-file-format-3d-printing-cad/#the-obj-file-format-specification-simplified

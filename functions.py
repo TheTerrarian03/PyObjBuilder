@@ -1,4 +1,17 @@
-def getRectangleCornerCoordinates(size, pos):
+def getRectangleCornerCoordinates(size: tuple[int, int], pos: tuple[int, int]) -> list[tuple[int, int]]:
+    '''Returns the coordinates of a rectangle's 4 corners
+    
+        Parameters
+        ----------
+            size : tuple
+                Size of rectangle (x,y)
+            pos : tuple
+                Position of rectangle (x,y)
+                
+        Returns
+        -------
+            list[tuple[int, int]]
+                a list of the coordinates, as tuples of 2 ints'''
     # order: top-left, top-right, bottom-left, bottom-right
     # size: (x-size, y-size)
     # pos: (x-pos from left, y-pos from top)
@@ -8,7 +21,8 @@ def getRectangleCornerCoordinates(size, pos):
                (pos[0]+size[0], pos[1]+size[1])]
     return corners
 
-def isWithinRange(min, max, current):
+def isWithinRange(min: float, max: float, current: float) -> bool:
+    '''Returns a true/false based on whether the current value is within the min/max range'''
     if (min < current < max):
         return True
     return False
@@ -31,7 +45,7 @@ def isApproxAt2D(targetPoint, currentPoint, error):
     # not approximately at coordinate/position
     return False
 
-def getApproxMousePos(size, pos, mousePos, error=2):
+def getApproxMousePos(size: tuple[int, int], pos: tuple[int, int], mousePos: tuple[int, int], error: int=2):
     rectCorners = getRectangleCornerCoordinates(size, pos)
     # first check all 4 corners- corners take priority
     if (isApproxAt2D(rectCorners[0], mousePos, error)):

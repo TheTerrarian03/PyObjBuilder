@@ -3,6 +3,8 @@ import classes as cls
 import functions as fcs
 
 
+banana = int(5)
+
 def main():
     pygame.init()
     running = True
@@ -21,8 +23,7 @@ def main():
         window.update()
         
         window.updateSurface()
-        frame1.checkMouse()
-        clock.tick(60)
+        clock.tick(60) # limit frame rate to 60 fps
     
     pygame.quit()
 
